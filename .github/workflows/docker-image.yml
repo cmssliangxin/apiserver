@@ -1,0 +1,10 @@
+name: Docker Image CI
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [psuh]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag cmssliangxin2/apiserver:latest
